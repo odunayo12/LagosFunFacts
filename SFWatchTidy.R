@@ -7,10 +7,10 @@ library(gifski)
 # SFWatch_tidy  <-
 #   SFWatch %>% filter(State == "Lagos", Classification == "Food Item")
 # 
-# write_csv(SFWatch_tidy, "Data/SFWatch_tidy.csv")
+# write_csv(SFWatch_tidy, "Data_/SFWatch_tidy.csv")
 
 
-SFWatch_tidy <- read_csv("./Data/SFWatch_tidy.csv")
+SFWatch_tidy <- read_csv("./Data_/SFWatch_tidy.csv")
 #head(SFWatch_tidy)
 SFWatch_tidy$Date <- dmy(SFWatch_tidy$Date)
 SFWatch_tidy$Date <- format(as.Date(SFWatch_tidy$Date), "%Y-%m")
@@ -110,6 +110,6 @@ animate(
   renderer = ffmpeg_renderer()
 ) -> for_mp4
 
-anim_save("./Animation/animation2.mp4", animation = for_mp4)
+anim_save("Animation/animation2.mp4", animation = for_mp4)
 
 #,hjust=0.5, face="italic"
